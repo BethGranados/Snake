@@ -1,7 +1,7 @@
 import actor
 
 class player(actor.actor):
-    movement = (0, 10)
+    movement = (0, 10)  #Always starts going left.
     def move(self):
         self.cord = (self.cord[0] + self.movement[0], self.cord[1] + self.movement[1])
     def changeDirX(self, x):

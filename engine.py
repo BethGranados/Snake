@@ -21,12 +21,14 @@ class engine:
         
         self.running = True
         while self.gameOpen:
+            #Main Loop for the actual game
             while self.running:
                 self.events()
                 self.update()
                 self.scene.render(self.actorList, self.amount)
                 self.scene.drawText("Score: " + str(self.amount - 3) , (0,0))
                 self.scene.flippingTheScene()
+            #We only exit the loop when we die. All the following is the code for the game over screen.
             self.scene.drawText("Game Over", (300, 320))
             self.scene.drawText("Press Space to play again", (180, 350))
             for event in pygame.event.get():
